@@ -13,7 +13,7 @@ class FileHandler(abc.ABC):
 
 class JsonFileHandler(FileHandler):
 
-    def init(self, filename: str):
+    def __init__(self, filename: str):
         self.filename = filename
 
     def save_vacancies(self, vacancies: list):

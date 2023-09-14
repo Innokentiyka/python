@@ -1,7 +1,7 @@
 class InvalidDataError(Exception):
     """Основное исключение для ошибок валидации"""
 
-    def init(self, message, field=None):
+    def __init__(self, message, field=None):
         """
         :param message: Сообщение об ошибке.
         :param field: Поле, которое вызвало ошибку.
