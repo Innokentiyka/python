@@ -16,8 +16,10 @@ def user_interaction():
         api = SuperjobAPI()
 
     vacancies_data = api.fetch_vacancies(query)
+
     vacancies = [Vacancy(v['name'], v['url'], v.get('salary', 'N/A'), v.get('description', 'N/A')) for v in
-                 vacancies_data]
+                 vacancies_data ]
+
 
     # Сохраняем в файл
     handler = JsonFileHandler('vacancies.json')
