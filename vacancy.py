@@ -15,12 +15,12 @@ class InvalidDataError(Exception):
             return f"Field '{self.field}': {base_message}"
         return base_message
 
-class Vacancy:
-    def init(self, title: str, link: str, salary: str, description: str):
-        self.title = title
-        self.link = link
-        self.salary = salary
-        self.description = description
+class Vacancy(Exception):
+    def __init__(self, title: str, link: str, salary: str, description: str):
+        self._title = title
+        self._link = link
+        self._salary = salary
+        self._description = description
 
     @property
     def title(self) -> str:
